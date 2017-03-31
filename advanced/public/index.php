@@ -1,13 +1,11 @@
 <?php
 
 require_once "../vendor/autoload.php";
+require_once "config.php";
+require_once "service.php";
 
-use Pimple\Container;
 
-$container = new Container();
 
-$container['date'] = function(){
-	return new \DateTime();
-};
+$list = $container['ServiceProduct']->listP();
 
-var_dump($container['date']);
+require_once "list.product.php";
